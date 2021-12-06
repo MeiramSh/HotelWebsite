@@ -64,14 +64,15 @@ create table reservations(
 	type_id int references hotel_room_type,
 	check_in date,
 	check_out date,
-	primary key(serial)
+	primary key(id)
 );
 
 
 create table occupaition(
 	rsvsn_id int references reservations,
 	room_id int references room,
-	-- guest_id int references guest
+        guest_id int references guest,
+	primary key(rsvsn_id)
 );
 
 
