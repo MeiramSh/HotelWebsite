@@ -86,12 +86,28 @@ create table occupaition(
 create table price(
 	day int,
 	room_type int references hotel_room_type, 	
-	guest_type int,
 	price float,
-	check(1 <= day and day <=7)
+	check(1 <= day and day <=7),
+	primary key(day, room_type)
 )
 
 
+create table bill_history(
+  bill_id serial,
+  rsvsn_id int references reservation,
+  guest_id int references guest,
+  primary key(bill_id) 
+)
+
+create table employee(
+  employee_id int,
+  primary key(employee_id)
+)
+
+create table manager(
+  employee_id int references employee,
+  primary key(employee_id)
+)
 
 
 
