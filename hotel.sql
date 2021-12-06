@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS hotel CASCADE;
 DROP TABLE IF EXISTS address CASCADE;
+--gavno
 DROP TABLE IF EXISTS phone_number CASCADE;
 create type identification as enum('passport', 'driving license');
 create table hotel(
